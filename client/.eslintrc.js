@@ -22,6 +22,9 @@ module.exports = {
     sourceType: 'module',
   },
   root: true,
+  rules: {
+    'react/prop-types': 0,
+  },
   settings: {
     react: {
       version: 'detect',
