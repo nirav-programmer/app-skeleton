@@ -5,9 +5,9 @@ type UserProps = { user: UserData };
 
 const User: React.FC<UserProps> = ({ user }) => {
   return (
-    <span>
+    <li>
       {user.email} - {user.firstName} {user.lastName}
-    </span>
+    </li>
   );
 };
 

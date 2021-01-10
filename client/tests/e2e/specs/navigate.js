@@ -1,6 +1,6 @@
 describe('Navigate on the home page', () => {
-  it('Visits the app root url', () => {
+  it('Display the login form', () => {
     cy.visit('/');
-    cy.contains('p', 'Hello world!');
+    cy.contains('input', 'Save');
   });
 });
