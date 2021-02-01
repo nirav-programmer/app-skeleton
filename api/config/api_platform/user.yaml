@@ -1,13 +1,30 @@
 resources:
-    Carcel\User\Application\Command\CreateUser:
-        attributes:
-            messenger: true
-            output: false
+    Carcel\User\Domain\Model\Write\User:
         collectionOperations:
+#            get:
+#                controller: 'ApiPlatform\Core\Action\NotFoundAction'
+#                read': false,
+#                status: 404
             post:
-                path: '/users'
+                input: 'Carcel\User\Application\Command\CreateUser'
+                messenger: input
+                output: false
                 status: 202
-        itemOperations: {}
+        itemOperations:
+            delete:
+                input: 'Carcel\User\Application\Command\DeleteUser'
+                messenger: input
+                output: false
+                status: 202
+#            get:
+#                controller: 'ApiPlatform\Core\Action\NotFoundAction'
+#                read': false,
+#                status: 404
+            put:
+                input: 'Carcel\User\Application\Command\UpdateUser'
+                messenger: input
+                output: false
+                status: 202
 
     Carcel\User\Application\Query\GetUserCollection:
         collectionOperations:
@@ -20,32 +37,6 @@ resources:
         itemOperations:
             get:
                 path: '/users/{id}'
-        properties:
-            identifier:
-                identifier: true
-
-    Carcel\User\Application\Command\UpdateUser:
-        attributes:
-            messenger: true
-            output: false
-        collectionOperations: {}
-        itemOperations:
-            put:
-                path: '/users/{id}'
-                status: 202
-        properties:
-            identifier:
-                identifier: true
-
-    Carcel\User\Application\Command\DeleteUser:
-        attributes:
-            messenger: true
-            output: false
-        collectionOperations: {}
-        itemOperations:
-            delete:
-                path: '/users/{id}'
-                status: 202
         properties:
             identifier:
                 identifier: true

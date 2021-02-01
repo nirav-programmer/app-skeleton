@@ -58,7 +58,7 @@ final class UpdateUserContext implements Context
         $this->response = $this->client()->request(
             'PUT',
             $this->router->generate(
-                'api_update_users_put_item',
+                'api_users_put_item',
                 ['id' => $this->updatedUserIdentifier]
             ),
             [
@@ -78,7 +78,7 @@ final class UpdateUserContext implements Context
         $this->response = $this->client()->request(
             'PUT',
             $this->router->generate(
-                'api_update_users_put_item',
+                'api_users_put_item',
                 ['id' => array_keys(UserFixtures::USERS_DATA)[0]]
             ),
             [
@@ -102,7 +102,7 @@ final class UpdateUserContext implements Context
         $this->response = $this->client()->request(
             'PUT',
             $this->router->generate(
-                'api_update_users_put_item',
+                'api_users_put_item',
                 ['id' => UserFixtures::ID_OF_NON_EXISTENT_USER]
             ),
             [

@@ -47,7 +47,7 @@ final class DeleteUserContext implements Context
     {
         $this->response = $this->client()->request(
             'DELETE',
-            $this->router->generate('api_delete_users_delete_item', [
+            $this->router->generate('api_users_delete_item', [
                 'id' => array_keys(UserFixtures::USERS_DATA)[0],
             ]),
             [

@@ -60,7 +60,7 @@ final class CreateUserContext implements Context
     {
         $this->response = $this->client()->request(
             'POST',
-            $this->router->generate('api_create_users_post_collection'),
+            $this->router->generate('api_users_post_collection'),
             [
                 'headers' => [
                     'Authorization' => 'Bearer ' . AuthenticationContext::$TOKEN,
@@ -77,7 +77,7 @@ final class CreateUserContext implements Context
     {
         $this->response = $this->client()->request(
             'POST',
-            $this->router->generate('api_create_users_post_collection'),
+            $this->router->generate('api_users_post_collection'),
             [
                 'headers' => [
                     'Authorization' => 'Bearer ' . AuthenticationContext::$TOKEN,

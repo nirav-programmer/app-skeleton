@@ -163,6 +163,12 @@ serve-client: traefik/ssl/_wildcard.docker.localhost.pem build-client-prod ## Se
 down: #main# Stop the application and remove all containers, networks and volumes.
 	@docker-compose down -v
 
+# Usefull aliases
+
+.PHONY: console
+console: #main# Use the Symfony CLI. Example: "make console IO=debug:container"
+	@docker-compose run --rm php bin/console ${IO}
+
 # Test the API
 
 .PHONY: api-tests
